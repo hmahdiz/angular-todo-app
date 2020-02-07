@@ -1,0 +1,9 @@
+<div class="todoList">
+    <ul *ngIf="todos && todos.length>0">
+        <li *ngFor="let todo of todos" class="task">
+            <input type="checkbox" [(ngModel)]="todo.done" (change)="onChangeStatus(todo)" name="ch-{{todo.name}}" />
+            <label for="ch-{{todo.name}}">{{todo.name}}</label>
+        </li>
+    </ul>
+</div>
+<button (click)="getTodos()">Test</button>

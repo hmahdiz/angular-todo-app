@@ -1,0 +1,28 @@
+form {
+    font-size: 20px;
+}
+
+input {
+    margin: 15px;
+    font-size: 19px;
+    width: 70%;
+    padding: 15px 22px;
+    box-sizing: border-box;
+    margin: 10px 5px;
+    height: 35px;
+    border-radius: 4px;
+}
+
+.border {
+    width: 50%;
+    border: inset gray;
+    margin: 5px;
+    padding: 5px;
+}
+
+.addButton{
+    font-size: 19px;
+    padding: 4px 25px;
+    border-radius: 4px;
+    height: 35px;
+}
