@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../todo';
-import { TodoService } from '../todo.service';
+import { Todo } from '../Todo';
+import { TodoService } from '../services/todo.service';
 
 
 @Component({
@@ -19,6 +19,9 @@ export class TodoListComponent implements OnInit {
 
   getTodos() {
     this.todos = this.todoService.getAll();
+    // this.todoService.getAll().subscribe((response: Todo[]) => {
+    //   this.todos = response
+    // });
   }
 
   onChangeStatus(todo: Todo) {

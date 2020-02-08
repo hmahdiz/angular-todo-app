@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo';
+import { Todo } from '../Todo';
+import { HttpClient } from '@angular/common/http';
 
 let allTodos = [{ id: 1, name: 'task1', done: true }, { id: 2, name: 'task2', done: false }, { id: 3, name: 'taks3', done: false }];
 @Injectable({
@@ -7,9 +8,10 @@ let allTodos = [{ id: 1, name: 'task1', done: true }, { id: 2, name: 'task2', do
 })
 export class TodoService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getAll() {
+    // return this.httpClient.get('/assets/todo.json');
     return allTodos;
   }
 
