@@ -1,28 +1,22 @@
-form {
-    font-size: 20px;
-}
-
 input {
-    margin: 15px;
-    font-size: 19px;
-    width: 70%;
-    padding: 15px 22px;
-    box-sizing: border-box;
-    margin: 10px 5px;
-    height: 35px;
-    border-radius: 4px;
+  font-size: 19px;
+  width: 68%;
+  padding: 27px 22px;
+  box-sizing: border-box;
+  height: 55px;
+  border-radius: 4px;
 }
 
-.border {
-    width: 50%;
-    border: inset gray;
-    margin: 5px;
-    padding: 5px;
-}
+/* .border {
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+} */
 
-.addButton{
-    font-size: 19px;
-    padding: 4px 25px;
-    border-radius: 4px;
-    height: 35px;
+.addButton {
+  font-size: 19px;
+  padding: 4px 25px;
+  border-radius: 4px;
+  height: 35px;
 }

@@ -1,9 +1,24 @@
-<div class="todoList">
-    <ul *ngIf="todos && todos.length>0">
-        <li *ngFor="let todo of todos" class="task">
-            <input type="checkbox" [(ngModel)]="todo.done" (change)="onChangeStatus(todo)" name="ch-{{todo.name}}" />
-            <label for="ch-{{todo.name}}">{{todo.name}}</label>
-        </li>
-    </ul>
+<div *ngIf="todos && todos.length > 0">
+  <div *ngFor="let todo of todos" class="item">
+    <input
+      type="checkbox"
+      [(ngModel)]="todo.done"
+      (change)="onChangeStatus(todo)"
+      id="ch-{{ todo.name }}"
+      class="checkboxTodo"
+    />
+    <label
+      for="ch-{{ todo.name }}"
+      class="todoInput"
+      [ngClass]="todo.done ? 'done' : ''"
+    >
+      {{ todo.name }}
+    </label>
+    <!-- <input
+      type="text"
+      [value]="todo.name"
+      class="todoInput"
+      [ngClass]="todo.done ? 'done' : ''"
+    /> -->
+  </div>
 </div>
-<button (click)="getTodos()">Test</button>

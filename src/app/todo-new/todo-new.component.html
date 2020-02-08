@@ -1,5 +1,10 @@
-<form (submit)="add(newTodoName)" class="border">
-    Task
-    <input type="text" [(ngModel)]="newTodoName" name="newTodoName" placeholder="What do you need to do?"/>
-    <button type="submit" class="addButton">Add</button>
+<form (submit)="add(newTodoName)">
+  <!-- Task -->
+  <input
+    type="text"
+    [(ngModel)]="newTodoName"
+    name="newTodoName"
+    placeholder="What do you need to do?"
+  />
+  <!-- <button type="submit" class="addButton">Add</button> -->
 </form>
