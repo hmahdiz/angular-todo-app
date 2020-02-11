@@ -24,7 +24,25 @@ export class TodoListComponent implements OnInit {
     // });
   }
 
-  onChangeStatus(todo: Todo) {
-    // alert(todo.done);
+  remove(todo: Todo) {
+    this.todoService.remove(todo);
+  }
+
+  changeTodoToEditing(todo: Todo, todoElement: HTMLInputElement) {
+    if(todo.done){
+      return;
+    }
+    todo.editMode = true;
+    todoElement.focus();
+  }
+
+  completeEditing(todo: Todo, changedTodoName: string) {
+    todo.editMode = false;
+    this.todoService.changeTodoItem(todo.id, changedTodoName);
+  }
+
+  cancelEditing(todo: Todo, todoElement: HTMLInputElement) {
+    todo.editMode = false;
+    todoElement.value = todo.name;
   }
 }

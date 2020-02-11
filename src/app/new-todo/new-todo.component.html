@@ -1,10 +1,10 @@
 <form (submit)="add()">
-  <!-- Task -->
   <input
     type="text"
     [(ngModel)]="newTodoName"
     name="newTodoName"
     placeholder="What do you need to do?"
+    class="new-todo"
+    autofocus
   />
-  <!-- <button type="submit" class="addButton">Add</button> -->
 </form>

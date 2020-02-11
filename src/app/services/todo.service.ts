@@ -19,4 +19,14 @@ export class TodoService {
     newTodo.id = allTodos.length + 1;
     allTodos.push(newTodo);
   }
+
+  remove(todo: Todo) {
+    const todoIndex = allTodos.indexOf(todo);
+    allTodos.splice(todoIndex, 1);
+  }
+
+  changeTodoItem(id: number, newTodoName: string) {
+    const currentTodo = allTodos.find(todo => todo.id === id);
+    currentTodo.name = newTodoName;
+  }
 }

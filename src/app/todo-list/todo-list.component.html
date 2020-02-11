@@ -1,24 +1,15 @@
-<div *ngIf="todos && todos.length > 0">
-  <div *ngFor="let todo of todos" class="item">
-    <input
-      type="checkbox"
-      [(ngModel)]="todo.done"
-      (change)="onChangeStatus(todo)"
-      id="ch-{{ todo.name }}"
-      class="checkboxTodo"
-    />
-    <label
-      for="ch-{{ todo.name }}"
-      class="todoInput"
-      [ngClass]="todo.done ? 'done' : ''"
-    >
-      {{ todo.name }}
-    </label>
-    <!-- <input
-      type="text"
-      [value]="todo.name"
-      class="todoInput"
-      [ngClass]="todo.done ? 'done' : ''"
-    /> -->
-  </div>
-</div>
+<section *ngIf="todos && todos.length > 0" class="todo-list-section">
+  <ul class="todo-list-ul">
+    <li *ngFor="let todo of todos" class="item" [class.done]="todo.done" [class.editing]="todo.editMode">
+      <div class="group">
+        <input type="checkbox" [(ngModel)]="todo.done" id="ch-{{ todo.name }}" class="todo-checkbox" />
+        <label (dblclick)="changeTodoToEditing(todo,inputItem)" class="todo-item" [for]="'ch-'+todo.name">
+          {{ todo.name }}
+        </label>
+        <button (click)="remove(todo)" class="remove-button"></button>
+      </div>
+      <input #inputItem [value]="todo.name" class="todo-edit" (keyup.enter)="completeEditing(todo,inputItem.value)"
+        (keyup.escape)="cancelEditing(todo,inputItem)" />
+    </li>
+  </ul>
+</section>
