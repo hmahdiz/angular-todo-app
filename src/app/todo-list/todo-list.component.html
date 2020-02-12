@@ -1,9 +1,9 @@
 <section *ngIf="todos && todos.length > 0" class="todo-list-section">
   <ul class="todo-list-ul">
-    <li *ngFor="let todo of todos" class="item" [class.done]="todo.done" [class.editing]="todo.editMode">
+    <li *ngFor="let todo of todos" class="item" [class.completed]="todo.completed" [class.editing]="todo.editMode">
       <div class="group">
-        <input type="checkbox" [(ngModel)]="todo.done" id="ch-{{ todo.name }}" class="todo-checkbox" />
-        <label (dblclick)="changeTodoToEditing(todo,inputItem)" class="todo-item" [for]="'ch-'+todo.name">
+        <input type="checkbox" [(ngModel)]="todo.completed" id="ch-{{ todo.name }}" class="todo-checkbox" />
+        <label (click)="changeTodoToEditing(todo,inputItem)" class="todo-item" [for]="'ch-'+todo.name">
           {{ todo.name }}
         </label>
         <button (click)="remove(todo)" class="remove-button"></button>

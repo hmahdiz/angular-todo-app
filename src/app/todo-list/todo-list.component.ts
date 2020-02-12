@@ -29,7 +29,7 @@ export class TodoListComponent implements OnInit {
   }
 
   changeTodoToEditing(todo: Todo, todoElement: HTMLInputElement) {
-    if(todo.done){
+    if(todo.completed){
       return;
     }
     todo.editMode = true;
