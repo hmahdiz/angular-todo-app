@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import { Todo } from '../types/Todo';
 import { HttpClient } from '@angular/common/http';
 
-let allTodos = [{ id: 1, name: 'task1', completed: true }, { id: 2, name: 'task2', completed: false }, { id: 3, name: 'taks3', completed: false }];
+let allTodos = [
+  { id: 1, name: 'Angular Structure', completed: false },
+  { id: 2, name: 'Refactoring', completed: true },
+  { id: 3, name: 'Change todo-new', completed: true },
+  { id: 4, name: 'Add remove-item', completed: true },
+  { id: 5, name: 'Add fiters', completed: true }];
 @Injectable({
   providedIn: 'root'
 })

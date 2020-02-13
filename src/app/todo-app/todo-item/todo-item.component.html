@@ -2,12 +2,12 @@
     <div class="group">
         <input type="checkbox" [checked]="todoItem.completed" id="ch-{{ todoItem.name }}" class="todo-item-checkbox"
             (click)="toggleTodo(todoItem)" />
-        <label (click)="enableEditing(todoItem,inputTodoItem)" class="todo-item-label">
+        <label class="todo-item-label" (click)="enableEditing(todoItem,inputTodoItem)">
             {{ todoItem.name }}
         </label>
         <button (click)="remove(todoItem)" class="remove-button"></button>
     </div>
     <input #inputTodoItem [value]="todoItem.name" class="todo-item-edit"
         (keyup.enter)="completeEditing(todoItem,inputTodoItem.value)"
-        (keyup.escape)="cancelEditing(todoItem,inputTodoItem)" />
+        (focusout)="cancelEditing(todoItem,inputTodoItem)" />
 </div>
