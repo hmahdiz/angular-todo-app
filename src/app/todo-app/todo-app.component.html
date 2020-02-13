@@ -1,7 +1,7 @@
 <div class="todo-app">
     <app-header title="{{title}}"></app-header>
     <div class="todo-content">
-        <app-todo-task (onAdd)="addTodo($event)"></app-todo-task>
+        <app-todo-new-task (onAdd)="addTodo($event)"></app-todo-new-task>
         <app-todo-list [todoItems]="todoItems" (onRemoveTodo)="removeTodo($event)"></app-todo-list>
         <app-footer class="todo-footer" (onFilter)="setFilter($event.id)"></app-footer>
     </div>

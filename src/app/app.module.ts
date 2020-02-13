@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-app/todo-list/todo-list.component';
-import { TodoTaskComponent } from './todo-app/todo-task/todo-task.component';
+import { TodoNewTaskComponent } from './todo-app/todo-new-task/todo-new-task.component';
 import { TodoService } from './services/todo.service';
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { HeaderComponent } from './todo-app/header/header.component';
@@ -18,7 +18,7 @@ import { TodoFilterComponent } from './todo-app/todo-filter/todo-filter.componen
   declarations: [
     AppComponent,
     TodoListComponent,
-    TodoTaskComponent,
+    TodoNewTaskComponent,
     TodoAppComponent,
     HeaderComponent,
     FooterComponent,
