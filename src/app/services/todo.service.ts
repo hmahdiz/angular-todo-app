@@ -3,11 +3,11 @@ import { Todo } from '../types/Todo';
 import { HttpClient } from '@angular/common/http';
 
 let allTodos = [
-  { id: 1, name: 'Angular Structure', completed: false },
-  { id: 2, name: 'Refactoring', completed: true },
-  { id: 3, name: 'Change todo-new', completed: true },
-  { id: 4, name: 'Add remove-item', completed: true },
-  { id: 5, name: 'Add fiters', completed: true }];
+  { id: 1, name: 'Angular Structure', completed: false, editMode: false },
+  { id: 2, name: 'Refactoring', completed: true, editMode: false },
+  { id: 3, name: 'Change todo-new', completed: true , editMode: false},
+  { id: 4, name: 'Add remove-item', completed: true , editMode: false},
+  { id: 5, name: 'Add fiters', completed: true , editMode: false}];
 @Injectable({
   providedIn: 'root'
 })

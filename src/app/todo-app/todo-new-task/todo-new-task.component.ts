@@ -18,7 +18,7 @@ export class TodoNewTaskComponent implements OnInit {
     if (!this.newTodoName || !this.newTodoName.trim())
       return;
 
-    const newTodo = { id: 0, name: this.newTodoName, completed: false }
+    const newTodo = { id: 0, name: this.newTodoName, completed: false, editModel: false }
     this.onAdd.emit(newTodo);
 
     this.newTodoName = null;
