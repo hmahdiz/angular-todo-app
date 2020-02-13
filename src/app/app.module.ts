@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './todos/components/todo-list/todo-list.component';
 import { TodoNewTaskComponent } from './todos/components/todo-new-task/todo-new-task.component';
 import { TodoService } from './todos/services/todo.service';
-import { TodoAppComponent } from './todos/todo-app.component';
 import { HeaderComponent } from './todos/components/header/header.component';
 import { FooterComponent } from './todos/components/footer/footer.component';
 import { TodoItemComponent } from './todos/components/todo-item/todo-item.component';
@@ -20,7 +19,6 @@ import { TodoFilterListComponent } from './todos/components/todo-filter-list/tod
     AppComponent,
     TodoListComponent,
     TodoNewTaskComponent,
-    TodoAppComponent,
     HeaderComponent,
     FooterComponent,
     TodoItemComponent,
