@@ -10,6 +10,8 @@ import { TodoService } from '../services/todo.service';
 export class TodoAppComponent implements OnInit {
   title = "Todos";
   todoItems: Todo[];
+  totalTodos: number;
+  currentFilter;
 
   constructor(private todoService: TodoService) { }
 
@@ -17,8 +19,14 @@ export class TodoAppComponent implements OnInit {
     this.getTodos(1);
   }
 
-  getTodos(filter:number) {
+  setFilter(filter) {
+    this.currentFilter = filter;
+    this.getTodos(this.currentFilter);
+  }
+
+  getTodos(filter: number) {
     const todos = this.todoService.getAll();
+    this.totalTodos = todos.length;
     switch (filter) {
       case 2:
         this.todoItems = todos.filter(todo => todo.completed);
@@ -32,6 +40,16 @@ export class TodoAppComponent implements OnInit {
     // this.todoService.getAll().subscribe((response: Todo[]) => {
     //   this.todos = response
     // });
+  }
+
+  addTodo(newTodo: Todo) {
+    this.todoService.add(newTodo);
+    this.getTodos(this.currentFilter);
+  }
+
+  removeTodo(removedTodo: Todo) {
+    this.todoService.remove(removedTodo);
+    this.getTodos(this.currentFilter);
   }
 
 }

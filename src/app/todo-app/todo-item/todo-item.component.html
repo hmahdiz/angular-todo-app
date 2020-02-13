@@ -1,11 +1,8 @@
-<div class="todo-item" [class.completed]="todoItem.completed" 
-    [class.editing]="todoItem.editMode">
+<div class="todo-item" [class.completed]="todoItem.completed" [class.editing]="todoItem.editMode">
     <div class="group">
-        <input type="checkbox" [(ngModel)]="todoItem.completed" 
-            id="ch-{{ todoItem.name }}"
+        <input type="checkbox" [(ngModel)]="todoItem.completed" id="ch-{{ todoItem.name }}"
             class="todo-item-checkbox" />
-        <label (click)="changeTodoToEditing(todoItem,inputTodoItem)" 
-            class="todo-item-label">
+        <label (click)="changeTodoToEditing(todoItem,inputTodoItem)" class="todo-item-label">
             {{ todoItem.name }}
         </label>
         <button (click)="remove(todoItem)" class="remove-button"></button>

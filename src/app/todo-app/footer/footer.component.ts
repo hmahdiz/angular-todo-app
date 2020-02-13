@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,14 +7,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  @Output() onFilter = new EventEmitter();;
+  selectedFilter: object;
+  filterList = [{ id: 1, name: 'All', isSelected: false }, { id: 2, name: 'Completed' }, { id: 3, name: 'Active' }];
+  @Output() onFilter = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    this.selectFilter(this.filterList[0]);
   }
 
-  setFilter(filter:number) {
-    this.onFilter.emit(filter)
+  selectFilter(filter) {
+    this.filterList.forEach(f => f.id === filter.id ? f.isSelected = true : f.isSelected = false);
+    this.onFilter.emit(filter);
   }
 }

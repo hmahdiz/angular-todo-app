@@ -1,3 +1,4 @@
-<button (click)="setFilter(1)">All</button>
-<button (click)="setFilter(2)">Completed</button>
-<button (click)="setFilter(3)">Uncompleted</button>
+<div class="todo-footer">
+    <app-todo-filter *ngFor="let filterItem of filterList" [filter]="filterItem" (onFilter)="selectFilter($event)">
+    </app-todo-filter>
+</div>

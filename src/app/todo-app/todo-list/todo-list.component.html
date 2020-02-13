@@ -1,5 +1,5 @@
-<section *ngIf="todoItems && todoItems.length > 0" class="todo-list-section">  
+<section *ngIf="todoItems && todoItems.length > 0" class="todo-list-section">
   <div class="todo-list">
-    <app-todo-item *ngFor="let todo of todoItems" [todoItem]="todo" class="item"></app-todo-item>
+    <app-todo-item *ngFor="let todo of todoItems" class="item" [todoItem]="todo" (onRemoveItem)="onRemoveItem($event)"></app-todo-item>
   </div>
 </section>

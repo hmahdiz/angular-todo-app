@@ -12,6 +12,7 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
 import { HeaderComponent } from './todo-app/header/header.component';
 import { FooterComponent } from './todo-app/footer/footer.component';
 import { TodoItemComponent } from './todo-app/todo-item/todo-item.component';
+import { TodoFilterComponent } from './todo-app/todo-filter/todo-filter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TodoItemComponent } from './todo-app/todo-item/todo-item.component';
     TodoAppComponent,
     HeaderComponent,
     FooterComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    TodoFilterComponent
   ],
   imports: [
     BrowserModule,
