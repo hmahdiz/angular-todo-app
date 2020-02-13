@@ -1,4 +1,3 @@
 <div class="todo-footer">
-    <app-todo-filter *ngFor="let filterItem of filterList" [filter]="filterItem" (onFilter)="selectFilter($event)">
-    </app-todo-filter>
+    <app-todo-filter-list (onTodoFilter)="filter($event)"></app-todo-filter-list>
 </div>

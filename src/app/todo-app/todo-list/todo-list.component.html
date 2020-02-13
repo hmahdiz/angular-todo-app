@@ -1,6 +1,7 @@
 <section *ngIf="todoList && todoList.length > 0" class="todo-list-section">
   <div class="todo-list">
-    <app-todo-item *ngFor="let todo of todoList" class="item" [todoItem]="todo" (onToggleItem)="onToggleItem($event)"
+    <app-todo-item *ngFor="let todo of todoList" class="item" [todoItem]="todo" 
+    (onToggleItem)="onToggleItem($event)"
       (onUpdateItem)="onUpdateItem($event)" (onRemoveItem)="onRemoveItem($event)"></app-todo-item>
   </div>
 </section>

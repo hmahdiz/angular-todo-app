@@ -12,7 +12,8 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
 import { HeaderComponent } from './todo-app/header/header.component';
 import { FooterComponent } from './todo-app/footer/footer.component';
 import { TodoItemComponent } from './todo-app/todo-item/todo-item.component';
-import { TodoFilterComponent } from './todo-app/todo-filter/todo-filter.component';
+import { TodoFilterItemComponent } from './todo-app/todo-filter-item/todo-filter-item.component';
+import { TodoFilterListComponent } from './todo-app/todo-filter-list/todo-filter-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TodoFilterComponent } from './todo-app/todo-filter/todo-filter.componen
     HeaderComponent,
     FooterComponent,
     TodoItemComponent,
-    TodoFilterComponent
+    TodoFilterItemComponent,
+    TodoFilterListComponent
   ],
   imports: [
     BrowserModule,

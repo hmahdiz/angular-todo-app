@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { TODO_FILTER } from '../../constants/Constants';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TodoFilter } from 'src/app/types/TodoFilter';
+
 
 @Component({
   selector: 'app-footer',
@@ -8,22 +8,13 @@ import { TodoFilter } from 'src/app/types/TodoFilter';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  selectedFilter: object;
-  filterList = [
-    { id: 1, name: TODO_FILTER.ALL, isSelected: false },
-    { id: 2, name: TODO_FILTER.COMPLETED, isSelected: false },
-    { id: 3, name: TODO_FILTER.ACTIVE, isSelected: false }];
   @Output() onTodoFilter = new EventEmitter();
-
   constructor() { }
 
   ngOnInit() {
-    this.selectFilter(this.filterList[0]);
   }
 
-  selectFilter(filter: TodoFilter) {
-    this.filterList.forEach(f => f.id === filter.id ? f.isSelected = true : f.isSelected = false);
+  filter(filter: TodoFilter) {
     this.onTodoFilter.emit(filter);
   }
 }

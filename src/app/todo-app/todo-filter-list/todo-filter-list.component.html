@@ -1,0 +1,3 @@
+<app-todo-filter-item *ngFor="let filterItem of filterList" 
+    [filter]="filterItem" (onTodoFilter)="selectFilter($event)">
+</app-todo-filter-item>

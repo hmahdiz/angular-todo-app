@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodoFilterComponent } from './todo-filter.component';
+import { TodoFilterListComponent } from './todo-filter-list.component';
 
-describe('TodoFilterComponent', () => {
-  let component: TodoFilterComponent;
-  let fixture: ComponentFixture<TodoFilterComponent>;
+describe('TodoFilterListComponent', () => {
+  let component: TodoFilterListComponent;
+  let fixture: ComponentFixture<TodoFilterListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoFilterComponent ]
+      declarations: [ TodoFilterListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoFilterComponent);
+    fixture = TestBed.createComponent(TodoFilterListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
