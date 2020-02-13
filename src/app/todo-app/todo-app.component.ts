@@ -40,6 +40,10 @@ export class TodoAppComponent implements OnInit {
     this.getTodos(this.selectedTodoFilter);
   }
 
+  updateTodo(changedTodo: Todo){
+    this.todoService.update(changedTodo);
+  }
+
   removeTodo(removedTodo: Todo) {
     this.todoService.remove(removedTodo);
     this.getTodos(this.selectedTodoFilter);
@@ -49,5 +53,6 @@ export class TodoAppComponent implements OnInit {
     this.selectedTodoFilter = filter;
     this.getTodos(this.selectedTodoFilter);
   }
+
 
 }

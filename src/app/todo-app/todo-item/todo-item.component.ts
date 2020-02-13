@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from 'src/app/types/Todo';
-import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -9,9 +8,10 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todoItem: Todo;
+  @Output() onUpdateItem = new EventEmitter();
   @Output() onRemoveItem = new EventEmitter();
 
-  constructor(private todoService: TodoService) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -30,7 +30,7 @@ export class TodoItemComponent implements OnInit {
 
   completeEditing(todo: Todo, changedTodoName: string) {
     todo.editMode = false;
-    this.todoService.changeTodoItem(todo.id, changedTodoName);
+    this.onUpdateItem.emit({ id: todo.id, name: changedTodoName });
   }
 
   cancelEditing(todo: Todo, todoElement: HTMLInputElement) {

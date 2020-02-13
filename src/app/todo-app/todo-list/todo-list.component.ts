@@ -7,15 +7,21 @@ import { Todo } from 'src/app/types/Todo';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  @Input() todoItems: Todo[];
+  @Input() todoList: Todo[] = [];
   @Output() onRemoveTodo = new EventEmitter();
+  @Output() onUpdateTodo = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onUpdateItem(todo: Todo) {
+    this.onUpdateTodo.emit(todo);
+  }
+
   onRemoveItem(todo: Todo) {
     this.onRemoveTodo.emit(todo);
   }
+
 }
