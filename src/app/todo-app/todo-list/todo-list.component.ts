@@ -8,12 +8,17 @@ import { Todo } from 'src/app/types/Todo';
 })
 export class TodoListComponent implements OnInit {
   @Input() todoList: Todo[] = [];
-  @Output() onRemoveTodo = new EventEmitter();
+  @Output() onToggleTodo = new EventEmitter();
   @Output() onUpdateTodo = new EventEmitter();
+  @Output() onRemoveTodo = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onToggleItem(todo: Todo) {
+    this.onToggleTodo.emit(todo);
   }
 
   onUpdateItem(todo: Todo) {

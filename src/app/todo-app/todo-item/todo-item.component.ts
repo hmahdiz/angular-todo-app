@@ -8,6 +8,7 @@ import { Todo } from 'src/app/types/Todo';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todoItem: Todo;
+  @Output() onToggleItem = new EventEmitter()
   @Output() onUpdateItem = new EventEmitter();
   @Output() onRemoveItem = new EventEmitter();
 
@@ -16,11 +17,15 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleTodo(todo: Todo) {
+    this.onToggleItem.emit(todo);
+  }
+
   remove(todo: Todo) {
     this.onRemoveItem.emit(todo);
   }
 
-  changeTodoToEditing(todo: Todo, todoElement: HTMLInputElement) {
+  enableEditing(todo: Todo, todoElement: HTMLInputElement) {
     if (todo.completed) {
       return;
     }

@@ -20,6 +20,11 @@ export class TodoService {
     allTodos.push(newTodo);
   }
 
+  toggle(todo: Todo) {
+    const currentTodo = allTodos.find(t => t.id === todo.id);
+    currentTodo.completed = !todo.completed;
+  }
+
   update(todo: Todo) {
     const currentTodo = allTodos.find(t => t.id === todo.id);
     currentTodo.name = todo.name;

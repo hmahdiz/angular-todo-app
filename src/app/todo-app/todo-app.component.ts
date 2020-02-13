@@ -40,7 +40,12 @@ export class TodoAppComponent implements OnInit {
     this.getTodos(this.selectedTodoFilter);
   }
 
-  updateTodo(changedTodo: Todo){
+  toggleTodo(toggledTodo: Todo) {
+    this.todoService.toggle(toggledTodo);
+    this.getTodos(this.selectedTodoFilter);
+  }
+
+  updateTodo(changedTodo: Todo) {
     this.todoService.update(changedTodo);
   }
 
