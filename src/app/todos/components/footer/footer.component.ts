@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TodoFilter } from 'src/app/types/TodoFilter';
+import { TodoFilter } from 'src/app/todos/types/TodoFilter';
 
 
 @Component({

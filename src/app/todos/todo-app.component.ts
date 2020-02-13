@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../types/Todo';
-import { TodoFilter } from '../types/TodoFilter';
-import { TodoService } from '../services/todo.service';
-import { TODO_FILTER } from '../constants/Constants';
+import { Todo } from './types/Todo';
+import { TodoFilter } from './types/TodoFilter';
+import { TodoService } from './services/todo.service';
+import { TODO_FILTER } from './constants/Constants';
 
 @Component({
   selector: 'app-todo-app',

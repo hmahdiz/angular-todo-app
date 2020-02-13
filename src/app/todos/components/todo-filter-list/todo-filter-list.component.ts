@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TODO_FILTER } from 'src/app/constants/Constants';
-import { TodoFilter } from 'src/app/types/TodoFilter';
+import { TODO_FILTER } from 'src/app/todos/constants/Constants';
+import { TodoFilter } from 'src/app/todos/types/TodoFilter';
 
 @Component({
   selector: 'app-todo-filter-list',
