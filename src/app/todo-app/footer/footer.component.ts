@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { TODO_FILTER } from '../../constants/Constants';
+import { TodoFilter } from 'src/app/types/TodoFilter';
 
 @Component({
   selector: 'app-footer',
@@ -8,8 +10,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   selectedFilter: object;
-  filterList = [{ id: 1, name: 'All', isSelected: false }, { id: 2, name: 'Completed' }, { id: 3, name: 'Active' }];
-  @Output() onFilter = new EventEmitter();
+  filterList = [
+    { id: 1, name: TODO_FILTER.ALL, isSelected: false },
+    { id: 2, name: TODO_FILTER.COMPLETED, isSelected: false },
+    { id: 3, name: TODO_FILTER.ACTIVE, isSelected: false }];
+  @Output() onTodoFilter = new EventEmitter();
 
   constructor() { }
 
@@ -17,8 +22,8 @@ export class FooterComponent implements OnInit {
     this.selectFilter(this.filterList[0]);
   }
 
-  selectFilter(filter) {
+  selectFilter(filter: TodoFilter) {
     this.filterList.forEach(f => f.id === filter.id ? f.isSelected = true : f.isSelected = false);
-    this.onFilter.emit(filter);
+    this.onTodoFilter.emit(filter);
   }
 }

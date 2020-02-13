@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Todo } from '../../Todo';
-import { TodoService } from '../../services/todo.service';
+import { Todo } from 'src/app/types/Todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -16,7 +15,7 @@ export class TodoListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRemoveItem(todo) {
+  onRemoveItem(todo: Todo) {
     this.onRemoveTodo.emit(todo);
   }
 }

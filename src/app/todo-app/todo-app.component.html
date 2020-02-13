@@ -3,6 +3,6 @@
     <div class="todo-content">
         <app-todo-new-task (onAdd)="addTodo($event)"></app-todo-new-task>
         <app-todo-list [todoItems]="todoItems" (onRemoveTodo)="removeTodo($event)"></app-todo-list>
-        <app-footer class="todo-footer" (onFilter)="setFilter($event.id)"></app-footer>
+        <app-footer class="todo-footer" (onTodoFilter)="filterTodo($event)"></app-footer>
     </div>
 </div>
