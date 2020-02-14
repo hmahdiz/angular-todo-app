@@ -1,25 +1,25 @@
+.todo-app {
+  position: absolute;
+  width: 97.5%;
+  /* background: rgb(249, 133, 59); */
+}
+
 .todo-title {
-    width: 100%;
-    text-align: center;
-    position: relative;
-    font-size: 100px;
-    font-weight: 100;
-    color: rgba(175, 47, 47, 0.15);
-    /* background: yellow; */
-  }
-  
-  .todo-app {
-    position: absolute;
-    width: 97.5%;
-    /* background: red; */
-  }
-  
-  .todo-content {
-    width: 60%;
-    position: relative;
-    top: -67px;
-    left: 21%;
-    /* background-color: green; */
-    background: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
-  }
+  width: 100%;
+  text-align: center;
+  position: relative;
+  font-size: 100px;
+  font-weight: 100;
+  color: rgba(175, 47, 47, 0.15);
+  /* background: #00ff3c; */
+}
+
+.todo-content {
+  width: 60%;
+  position: relative;
+  top: -67px;
+  left: 21%;
+  /* background-color: green; */
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
