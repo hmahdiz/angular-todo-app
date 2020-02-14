@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { Todo } from './todos/types/Todo';
-import { TodoFilter } from './todos/types/TodoFilter';
-import { TodoService } from './todos/services/todo.service';
-import { TODO_FILTER } from './todos/constants/Constants';
+import { Todo } from './types/Todo';
+import { TodoFilter } from './types/TodoFilter';
+import { TodoService } from './services/todo.service';
+import { TODO_FILTER } from './constants/Constants';
 
 @Component({
   selector: "app-root",
@@ -10,18 +10,20 @@ import { TODO_FILTER } from './todos/constants/Constants';
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "Todos";
   todoItems: Todo[];
+  filterList: TodoFilter[];
   selectedTodoFilter: TodoFilter;
+  selectedFilter: object;
 
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-    this.getTodos({ id: 1, name: 'All', isSelected: false });
+    this.filterList = this.todoService.getAllFilters();
+    this.filterTodo(this.filterList[0]);
   }
 
   getTodos(filter: TodoFilter) {
-    const todos = this.todoService.getAll();
+    const todos = this.todoService.getAllTodos();
 
     switch (filter.name) {
       case TODO_FILTER.COMPLETED:
@@ -55,6 +57,7 @@ export class AppComponent {
   }
 
   filterTodo(filter: TodoFilter) {
+    this.filterList.forEach(f => f.id === filter.id ? f.isSelected = true : f.isSelected = false);
     this.selectedTodoFilter = filter;
     this.getTodos(this.selectedTodoFilter);
   }

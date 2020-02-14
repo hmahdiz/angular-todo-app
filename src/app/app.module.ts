@@ -5,25 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todos/components/todo-list/todo-list.component';
-import { TodoNewTaskComponent } from './todos/components/todo-new-task/todo-new-task.component';
-import { TodoService } from './todos/services/todo.service';
-import { HeaderComponent } from './todos/components/header/header.component';
-import { FooterComponent } from './todos/components/footer/footer.component';
-import { TodoItemComponent } from './todos/components/todo-item/todo-item.component';
-import { TodoFilterItemComponent } from './todos/components/todo-filter-item/todo-filter-item.component';
-import { TodoFilterListComponent } from './todos/components/todo-filter-list/todo-filter-list.component';
+import { TodoNewTaskComponent } from './components/todo-new-task/todo-new-task.component';
+import { TodoService } from './services/todo.service';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { TodoFilterItemComponent } from './components/todo-filter-item/todo-filter-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
     TodoNewTaskComponent,
-    HeaderComponent,
-    FooterComponent,
     TodoItemComponent,
     TodoFilterItemComponent,
-    TodoFilterListComponent
   ],
   imports: [
     BrowserModule,
