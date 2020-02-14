@@ -4,12 +4,10 @@
         <app-todo-new-task (onAdd)="addTodo($event)"></app-todo-new-task>
 
         <section *ngIf="todoItems && todoItems.length > 0" class="todo-list-section">
-            <div class="todo-list">
-                <app-todo-item *ngFor="let todo of todoItems" class="item" [todoItem]="todo"
-                    (onToggleItem)="toggleTodo($event)" (onUpdateItem)="updateTodo($event)"
-                    (onRemoveItem)="removeTodo($event)">
-                </app-todo-item>
-            </div>
+            <app-todo-item *ngFor="let todo of todoItems" class="item" [todoItem]="todo"
+                (onToggleItem)="toggleTodo($event)" (onUpdateItem)="updateTodo($event)"
+                (onRemoveItem)="removeTodo($event)">
+            </app-todo-item>
         </section>
 
         <div class="todo-filter">
